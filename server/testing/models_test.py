@@ -1,11 +1,11 @@
 import pytest
-from server.app import app
-from models import db, Sweet, Vendor, VendorSweet
-from faker import Faker
 from flask import Flask
+# from app import app
+from server.models import db, Sweet, Vendor, VendorSweet
+from faker import Faker
 
 @pytest.fixture
-def app():
+def test_app():
     """Create and configure a new app instance for each test."""
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
